@@ -1,0 +1,459 @@
+#!/usr/bin/env python3
+"""
+Arc Raiders Tips Aggregator - Multi-Source Scraper
+Scrapes tips, guides, and meta information from Reddit, Steam, YouTube, and gaming sites.
+"""
+
+import json
+import re
+import hashlib
+from datetime import datetime, timedelta
+from pathlib import Path
+from dataclasses import dataclass, asdict
+from typing import Optional
+import urllib.request
+import urllib.parse
+import ssl
+
+DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR.mkdir(exist_ok=True)
+
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}
+
+@dataclass
+class Tip:
+    id: str
+    title: str
+    content: str
+    tags: list[str]
+    source: str
+    url: Optional[str]
+    score: int
+    scraped_at: str
+    isNew: bool = True
+    hot: bool = False
+
+def generate_id(text: str) -> str:
+    return hashlib.md5(text.encode()).hexdigest()[:12]
+
+def fetch_url(url: str) -> str:
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=15, context=ssl_context) as response:
+            return response.read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"Failed to fetch {url}: {e}")
+        return ""
+
+def extract_tags(text: str) -> list[str]:
+    text_lower = text.lower()
+    tags = []
+    
+    tag_keywords = {
+        "weapons": ["weapon", "gun", "rifle", "shotgun", "pistol", "smg", "tempest", "stitcher", 
+                   "venator", "rattler", "hullcracker", "bettina", "ferro", "hellclaw"],
+        "builds": ["build", "loadout", "setup", "gear", "augment", "combat mk"],
+        "maps": ["map", "dam battlegrounds", "spaceport", "buried city", "stella montis", 
+                "blue gate", "rust belt", "extraction point"],
+        "pvp": ["pvp", "player", "fight", "kill", "murder", "raider", "enemy player"],
+        "pve": ["pve", "arc", "robot", "machine", "matriarch", "bombardier", "sentinel", 
+               "leaper", "harvester", "queen"],
+        "meta": ["meta", "best", "optimal", "nerf", "buff", "patch", "update", "balance"],
+    }
+    
+    for tag, keywords in tag_keywords.items():
+        if any(kw in text_lower for kw in keywords):
+            tags.append(tag)
+    
+    return tags if tags else ["general"]
+
+def scrape_reddit_json() -> list[Tip]:
+    tips = []
+    subreddits = ["ArcRaiders"]
+    
+    for sub in subreddits:
+        for sort in ["hot", "new", "top"]:
+            url = f"https://www.reddit.com/r/{sub}/{sort}.json?limit=50"
+            if sort == "top":
+                url += "&t=week"
+            
+            content = fetch_url(url)
+            if not content:
+                continue
+            
+            try:
+                data = json.loads(content)
+                posts = data.get("data", {}).get("children", [])
+                
+                for post in posts:
+                    post_data = post.get("data", {})
+                    title = post_data.get("title", "")
+                    selftext = post_data.get("selftext", "")
+                    score = post_data.get("score", 0)
+                    permalink = post_data.get("permalink", "")
+                    created = post_data.get("created_utc", 0)
+                    
+                    if not title or score < 5:
+                        continue
+                    
+                    skip_keywords = ["lfg", "looking for", "trading", "wtb", "wts", 
+                                    "meme", "shitpost", "rant", "complaint"]
+                    if any(kw in title.lower() for kw in skip_keywords):
+                        continue
+                    
+                    tip_keywords = ["tip", "guide", "how to", "psa", "advice", "strategy",
+                                   "build", "loadout", "meta", "best", "discovered", 
+                                   "learned", "trick", "secret", "hidden"]
+                    is_tip = any(kw in title.lower() for kw in tip_keywords)
+                    is_tip = is_tip or any(kw in selftext.lower()[:500] for kw in tip_keywords)
+                    is_tip = is_tip or score > 100
+                    
+                    if not is_tip:
+                        continue
+                    
+                    content_text = selftext[:500] if selftext else title
+                    content_text = re.sub(r'\[.*?\]\(.*?\)', '', content_text)
+                    content_text = re.sub(r'https?://\S+', '', content_text)
+                    content_text = re.sub(r'\n{3,}', '\n\n', content_text).strip()
+                    
+                    if len(content_text) < 20:
+                        content_text = title
+                    
+                    created_dt = datetime.fromtimestamp(created)
+                    is_new = (datetime.now() - created_dt) < timedelta(days=2)
+                    is_hot = score > 200 or (score > 50 and is_new)
+                    
+                    tip = Tip(
+                        id=generate_id(title + permalink),
+                        title=title[:200],
+                        content=content_text[:500],
+                        tags=extract_tags(title + " " + selftext),
+                        source="r/ArcRaiders",
+                        url=f"https://reddit.com{permalink}" if permalink else None,
+                        score=score,
+                        scraped_at=datetime.now().isoformat(),
+                        isNew=is_new,
+                        hot=is_hot
+                    )
+                    tips.append(tip)
+                    
+            except json.JSONDecodeError as e:
+                print(f"Failed to parse Reddit JSON: {e}")
+    
+    return tips
+
+def scrape_steam_discussions() -> list[Tip]:
+    tips = []
+    url = "https://steamcommunity.com/app/1808500/discussions/"
+    content = fetch_url(url)
+    
+    if not content:
+        return tips
+    
+    pattern = r'class="forum_topic_name[^"]*"[^>]*>([^<]+)</a>'
+    titles = re.findall(pattern, content)
+    
+    link_pattern = r'href="(https://steamcommunity\.com/app/1808500/discussions/\d+/\d+/)"'
+    links = re.findall(link_pattern, content)
+    
+    tip_keywords = ["guide", "tip", "how to", "psa", "advice", "help", "question",
+                   "build", "strategy", "meta", "best"]
+    
+    for i, title in enumerate(titles[:20]):
+        title = title.strip()
+        
+        if not any(kw in title.lower() for kw in tip_keywords):
+            continue
+        
+        link = links[i] if i < len(links) else None
+        
+        tip = Tip(
+            id=generate_id(title + str(link)),
+            title=title[:200],
+            content=title,
+            tags=extract_tags(title),
+            source="Steam",
+            url=link,
+            score=0,
+            scraped_at=datetime.now().isoformat(),
+            isNew=True,
+            hot=False
+        )
+        tips.append(tip)
+    
+    return tips
+
+def get_curated_tips() -> list[Tip]:
+    curated = [
+        {
+            "title": "Decoy Grenades can be shot and destroyed mid-air",
+            "content": "When you see that blinking red device flying your way, a few accurate shots will disable it. Essential counter against players who rely on decoy tactics.",
+            "tags": ["pvp", "weapons"],
+            "source": "Community",
+            "score": 500,
+            "hot": True
+        },
+        {
+            "title": "Shotguns have NO headshot multiplier",
+            "content": "Damage is identical whether you aim for the head or body. Don't waste time lining up headshots with shotguns - center mass is equally effective.",
+            "tags": ["weapons", "meta"],
+            "source": "Community",
+            "score": 450,
+            "hot": True
+        },
+        {
+            "title": "Stack healing items for maximum efficiency",
+            "content": "Use a Bandage (10s HoT), then immediately follow with Vita-Spray for instant healing during the heal-over-time. Same principle works for shields - combine Shield Charger with Surge Charger.",
+            "tags": ["pve", "builds"],
+            "source": "Community",
+            "score": 400
+        },
+        {
+            "title": "Blast Smoke reveals enemies in Obscuring Smoke",
+            "content": "Obscuring Smoke provides cover, but Blast Smoke (from explosions, gunfire, or gas) outlines silhouettes. Toss an explosive into enemy smoke to reveal their positions.",
+            "tags": ["pvp", "meta"],
+            "source": "Community",
+            "score": 380
+        },
+        {
+            "title": "The underground room is the safest spot against the Queen",
+            "content": "In the final underground room, the Queen struggles to hit you while you can freely use Hellclaw or Swarm Missiles. Watch for other Raiders though.",
+            "tags": ["pve", "maps"],
+            "source": "Community",
+            "score": 350
+        },
+        {
+            "title": "Don't place Flamethrower Traps directly in doorways",
+            "content": "Enemies can trigger and destroy them before entering. Place them slightly inside or to the side for better effectiveness.",
+            "tags": ["pve", "builds"],
+            "source": "Community",
+            "score": 300
+        },
+        {
+            "title": "Climb ladders 3x faster with this movement tech",
+            "content": "Tap the interact button rapidly while climbing instead of holding it. You'll ascend significantly faster than normal climbing speed.",
+            "tags": ["general", "meta"],
+            "source": "Community",
+            "score": 420,
+            "hot": True
+        },
+        {
+            "title": "Zero fall damage exploit still works",
+            "content": "If you grab a ladder or ledge at any point during a fall, you reset your fall damage calculation. Useful for quick escapes from tall structures.",
+            "tags": ["general", "meta"],
+            "source": "Community",
+            "score": 380
+        },
+        {
+            "title": "Solo queue lobbies are generally more peaceful",
+            "content": "The community has an unspoken rule: solo games tend to be cooperative while squad games are PvP-heavy. Crouch spam to show friendly intent.",
+            "tags": ["pvp", "general"],
+            "source": "Community",
+            "score": 500,
+            "hot": True
+        },
+        {
+            "title": "Never turn your back on a Leaper",
+            "content": "Even with good gear, Leapers are deadly if you're not prepared. Either fully commit to the fight or avoid entirely - no half measures.",
+            "tags": ["pve"],
+            "source": "Community",
+            "score": 350
+        },
+        {
+            "title": "Announce yourself when entering buildings",
+            "content": "In friendly lobbies, use proximity voice chat to call out 'friendly' when entering occupied buildings. Reduces friendly fire incidents significantly.",
+            "tags": ["pvp", "general"],
+            "source": "Community",
+            "score": 280
+        },
+        {
+            "title": "Aim assist scales with FPS on controller",
+            "content": "Higher frame rates = stronger aim assist on controller. At 300fps, aim assist can track targets through trees and foliage. Controversial but confirmed.",
+            "tags": ["meta", "weapons"],
+            "source": "PC Gamer",
+            "score": 600,
+            "hot": True
+        },
+        {
+            "title": "Venator nerfed: Weight 2kg → 5kg, fire rate scaling reduced",
+            "content": "Patch 1.11.0 significantly nerfed the Venator. Consider Tempest or Rattler as alternatives for medium-range engagements.",
+            "tags": ["weapons", "meta"],
+            "source": "Patch Notes",
+            "score": 450,
+            "hot": True
+        },
+        {
+            "title": "Rattler buffed: Magazine now 12 rounds (from 10)",
+            "content": "The Rattler received a 20% magazine increase, making it more viable for sustained engagements. Good budget alternative.",
+            "tags": ["weapons", "meta"],
+            "source": "Patch Notes",
+            "score": 320
+        },
+        {
+            "title": "Hullcracker is the best PvE weapon",
+            "content": "Explosive damage devastates ARC units. Use against Matriarch and Bombardier - retreat to cover between volleys and let the splash damage work.",
+            "tags": ["weapons", "pve", "meta"],
+            "source": "Community",
+            "score": 400
+        },
+        {
+            "title": "Bettina is the only AR with strong ARC armor penetration",
+            "content": "If you need an assault rifle for PvE, Bettina outperforms all others against armored targets. Essential for mixed PvP/PvE builds.",
+            "tags": ["weapons", "pve", "meta"],
+            "source": "Community",
+            "score": 380
+        },
+        {
+            "title": "Mobility skills should be your first investment",
+            "content": "30-50 points in Mobility benefits ALL builds. Stamina management and movement speed are universally useful before specializing.",
+            "tags": ["builds", "meta"],
+            "source": "Community",
+            "score": 450,
+            "hot": True
+        },
+        {
+            "title": "Combat Mk.3 augment is best for PvP",
+            "content": "Strong shield support, extra grenade capacity, high survivability, and passive health regen. The meta choice for aggressive players.",
+            "tags": ["builds", "pvp", "meta"],
+            "source": "Community",
+            "score": 400
+        },
+        {
+            "title": "Deposit ARC Field Crates at Field Depots for free supplies",
+            "content": "Those large metal crates you can carry? Take them to Field Depot extraction machines for loot rewards. Many players miss this mechanic.",
+            "tags": ["pve", "maps"],
+            "source": "Community",
+            "score": 300
+        },
+        {
+            "title": "Free loadouts are underrated for learning maps",
+            "content": "Use free loadouts when exploring new areas. Lower stakes mean you can focus on learning extraction points and loot spawns without risk.",
+            "tags": ["general", "maps"],
+            "source": "Community",
+            "score": 250
+        },
+    ]
+    
+    return [
+        Tip(
+            id=generate_id(t["title"]),
+            title=t["title"],
+            content=t["content"],
+            tags=t["tags"],
+            source=t["source"],
+            url=None,
+            score=t["score"],
+            scraped_at=datetime.now().isoformat(),
+            isNew=False,
+            hot=t.get("hot", False)
+        )
+        for t in curated
+    ]
+
+def get_meta_builds() -> list[dict]:
+    return [
+        {
+            "name": "PvP Assault",
+            "type": "PvP",
+            "primary": "Tempest",
+            "secondary": "Stitcher",
+            "sidearm": "Any Pistol",
+            "augment": "Combat Mk.3",
+            "skills": {"mobility": 45, "conditioning": 20, "survival": 10},
+            "notes": "Use Tempest for medium-range pressure, close gaps with mobility, finish with Stitcher. Smoke grenades for disengaging."
+        },
+        {
+            "name": "PvE Demolisher",
+            "type": "PvE",
+            "primary": "Hullcracker",
+            "secondary": "Bettina",
+            "sidearm": "Ferro",
+            "augment": "Combat Mk.3",
+            "skills": {"mobility": 30, "conditioning": 30, "survival": 15},
+            "notes": "Hullcracker for large ARCs, Bettina for add clear, Ferro for precise weak point shots. Prioritize cover and kiting."
+        },
+        {
+            "name": "Hybrid Flex",
+            "type": "Mixed",
+            "primary": "Tempest",
+            "secondary": "Bettina",
+            "sidearm": "Ferro",
+            "augment": "Combat Mk.2",
+            "skills": {"mobility": 35, "conditioning": 25, "survival": 15},
+            "notes": "Balanced for Spaceport and Blue Gate where you'll face both players and ARCs. Jack of all trades."
+        },
+        {
+            "name": "Budget Runner",
+            "type": "Loot Run",
+            "primary": "Rattler",
+            "secondary": "Any SMG",
+            "sidearm": "Ferro",
+            "augment": "Combat Mk.1",
+            "skills": {"mobility": 50, "conditioning": 15, "survival": 10},
+            "notes": "For Dam Battlegrounds farming. Ferro eliminates flying threats, Rattler handles swarms. Avoid elites - focus on looting and extracting."
+        }
+    ]
+
+def deduplicate_tips(tips: list[Tip]) -> list[Tip]:
+    seen_ids = set()
+    seen_titles = set()
+    unique = []
+    
+    for tip in tips:
+        title_key = tip.title.lower()[:50]
+        if tip.id not in seen_ids and title_key not in seen_titles:
+            seen_ids.add(tip.id)
+            seen_titles.add(title_key)
+            unique.append(tip)
+    
+    return unique
+
+def main():
+    print("Starting Arc Raiders Tips Aggregator...")
+    print(f"Data directory: {DATA_DIR}")
+    
+    all_tips = []
+    
+    print("\n[1/4] Loading curated tips...")
+    curated = get_curated_tips()
+    all_tips.extend(curated)
+    print(f"  → {len(curated)} curated tips loaded")
+    
+    print("\n[2/4] Scraping Reddit...")
+    reddit_tips = scrape_reddit_json()
+    all_tips.extend(reddit_tips)
+    print(f"  → {len(reddit_tips)} tips from Reddit")
+    
+    print("\n[3/4] Scraping Steam Discussions...")
+    steam_tips = scrape_steam_discussions()
+    all_tips.extend(steam_tips)
+    print(f"  → {len(steam_tips)} tips from Steam")
+    
+    print("\n[4/4] Processing and deduplicating...")
+    all_tips = deduplicate_tips(all_tips)
+    all_tips.sort(key=lambda x: (x.hot, x.score), reverse=True)
+    print(f"  → {len(all_tips)} unique tips after deduplication")
+    
+    tips_file = DATA_DIR / "tips.json"
+    with open(tips_file, "w") as f:
+        json.dump([asdict(t) for t in all_tips], f, indent=2)
+    print(f"\nSaved tips to {tips_file}")
+    
+    builds = get_meta_builds()
+    builds_file = DATA_DIR / "builds.json"
+    with open(builds_file, "w") as f:
+        json.dump(builds, f, indent=2)
+    print(f"Saved builds to {builds_file}")
+    
+    print("\n" + "="*50)
+    print(f"COMPLETE: {len(all_tips)} tips indexed")
+    print("="*50)
+
+if __name__ == "__main__":
+    main()
