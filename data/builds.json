@@ -1,0 +1,58 @@
+[
+  {
+    "name": "PvP Assault",
+    "type": "PvP",
+    "primary": "Tempest",
+    "secondary": "Stitcher",
+    "sidearm": "Any Pistol",
+    "augment": "Combat Mk.3",
+    "skills": {
+      "mobility": 45,
+      "conditioning": 20,
+      "survival": 10
+    },
+    "notes": "Use Tempest for medium-range pressure, close gaps with mobility, finish with Stitcher. Smoke grenades for disengaging."
+  },
+  {
+    "name": "PvE Demolisher",
+    "type": "PvE",
+    "primary": "Hullcracker",
+    "secondary": "Bettina",
+    "sidearm": "Ferro",
+    "augment": "Combat Mk.3",
+    "skills": {
+      "mobility": 30,
+      "conditioning": 30,
+      "survival": 15
+    },
+    "notes": "Hullcracker for large ARCs, Bettina for add clear, Ferro for precise weak point shots. Prioritize cover and kiting."
+  },
+  {
+    "name": "Hybrid Flex",
+    "type": "Mixed",
+    "primary": "Tempest",
+    "secondary": "Bettina",
+    "sidearm": "Ferro",
+    "augment": "Combat Mk.2",
+    "skills": {
+      "mobility": 35,
+      "conditioning": 25,
+      "survival": 15
+    },
+    "notes": "Balanced for Spaceport and Blue Gate where you'll face both players and ARCs. Jack of all trades."
+  },
+  {
+    "name": "Budget Runner",
+    "type": "Loot Run",
+    "primary": "Rattler",
+    "secondary": "Any SMG",
+    "sidearm": "Ferro",
+    "augment": "Combat Mk.1",
+    "skills": {
+      "mobility": 50,
+      "conditioning": 15,
+      "survival": 10
+    },
+    "notes": "For Dam Battlegrounds farming. Ferro eliminates flying threats, Rattler handles swarms. Avoid elites - focus on looting and extracting."
+  }
+]

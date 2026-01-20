@@ -1,0 +1,304 @@
+[
+  {
+    "id": "edc679fa2965",
+    "title": "Aim assist scales with FPS on controller",
+    "content": "Higher frame rates = stronger aim assist on controller. At 300fps, aim assist can track targets through trees and foliage. Controversial but confirmed.",
+    "tags": [
+      "meta",
+      "weapons"
+    ],
+    "source": "PC Gamer",
+    "url": null,
+    "score": 600,
+    "scraped_at": "2026-01-20T01:39:43.021255",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "840c547bff0d",
+    "title": "Decoy Grenades can be shot and destroyed mid-air",
+    "content": "When you see that blinking red device flying your way, a few accurate shots will disable it. Essential counter against players who rely on decoy tactics.",
+    "tags": [
+      "pvp",
+      "weapons"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 500,
+    "scraped_at": "2026-01-20T01:39:43.021208",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "e3a2fdc34749",
+    "title": "Solo queue lobbies are generally more peaceful",
+    "content": "The community has an unspoken rule: solo games tend to be cooperative while squad games are PvP-heavy. Crouch spam to show friendly intent.",
+    "tags": [
+      "pvp",
+      "general"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 500,
+    "scraped_at": "2026-01-20T01:39:43.021246",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "6d30527f66e6",
+    "title": "Shotguns have NO headshot multiplier",
+    "content": "Damage is identical whether you aim for the head or body. Don't waste time lining up headshots with shotguns - center mass is equally effective.",
+    "tags": [
+      "weapons",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 450,
+    "scraped_at": "2026-01-20T01:39:43.021220",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "b7eaedf86e77",
+    "title": "Venator nerfed: Weight 2kg \u2192 5kg, fire rate scaling reduced",
+    "content": "Patch 1.11.0 significantly nerfed the Venator. Consider Tempest or Rattler as alternatives for medium-range engagements.",
+    "tags": [
+      "weapons",
+      "meta"
+    ],
+    "source": "Patch Notes",
+    "url": null,
+    "score": 450,
+    "scraped_at": "2026-01-20T01:39:43.021260",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "e8c14a203e56",
+    "title": "Mobility skills should be your first investment",
+    "content": "30-50 points in Mobility benefits ALL builds. Stamina management and movement speed are universally useful before specializing.",
+    "tags": [
+      "builds",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 450,
+    "scraped_at": "2026-01-20T01:39:43.021271",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "bdb665980474",
+    "title": "Climb ladders 3x faster with this movement tech",
+    "content": "Tap the interact button rapidly while climbing instead of holding it. You'll ascend significantly faster than normal climbing speed.",
+    "tags": [
+      "general",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 420,
+    "scraped_at": "2026-01-20T01:39:43.021237",
+    "isNew": false,
+    "hot": true
+  },
+  {
+    "id": "cdc0e8e1a0fe",
+    "title": "Stack healing items for maximum efficiency",
+    "content": "Use a Bandage (10s HoT), then immediately follow with Vita-Spray for instant healing during the heal-over-time. Same principle works for shields - combine Shield Charger with Surge Charger.",
+    "tags": [
+      "pve",
+      "builds"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 400,
+    "scraped_at": "2026-01-20T01:39:43.021225",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "59b6fac99b40",
+    "title": "Hullcracker is the best PvE weapon",
+    "content": "Explosive damage devastates ARC units. Use against Matriarch and Bombardier - retreat to cover between volleys and let the splash damage work.",
+    "tags": [
+      "weapons",
+      "pve",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 400,
+    "scraped_at": "2026-01-20T01:39:43.021265",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "27a601a3b093",
+    "title": "Combat Mk.3 augment is best for PvP",
+    "content": "Strong shield support, extra grenade capacity, high survivability, and passive health regen. The meta choice for aggressive players.",
+    "tags": [
+      "builds",
+      "pvp",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 400,
+    "scraped_at": "2026-01-20T01:39:43.021273",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "05f05337c11d",
+    "title": "Blast Smoke reveals enemies in Obscuring Smoke",
+    "content": "Obscuring Smoke provides cover, but Blast Smoke (from explosions, gunfire, or gas) outlines silhouettes. Toss an explosive into enemy smoke to reveal their positions.",
+    "tags": [
+      "pvp",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 380,
+    "scraped_at": "2026-01-20T01:39:43.021228",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "01ab73943136",
+    "title": "Zero fall damage exploit still works",
+    "content": "If you grab a ladder or ledge at any point during a fall, you reset your fall damage calculation. Useful for quick escapes from tall structures.",
+    "tags": [
+      "general",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 380,
+    "scraped_at": "2026-01-20T01:39:43.021242",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "fd9a34192d9f",
+    "title": "Bettina is the only AR with strong ARC armor penetration",
+    "content": "If you need an assault rifle for PvE, Bettina outperforms all others against armored targets. Essential for mixed PvP/PvE builds.",
+    "tags": [
+      "weapons",
+      "pve",
+      "meta"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 380,
+    "scraped_at": "2026-01-20T01:39:43.021268",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "216707ab5c8f",
+    "title": "The underground room is the safest spot against the Queen",
+    "content": "In the final underground room, the Queen struggles to hit you while you can freely use Hellclaw or Swarm Missiles. Watch for other Raiders though.",
+    "tags": [
+      "pve",
+      "maps"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 350,
+    "scraped_at": "2026-01-20T01:39:43.021231",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "eb52d88f3cfe",
+    "title": "Never turn your back on a Leaper",
+    "content": "Even with good gear, Leapers are deadly if you're not prepared. Either fully commit to the fight or avoid entirely - no half measures.",
+    "tags": [
+      "pve"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 350,
+    "scraped_at": "2026-01-20T01:39:43.021250",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "fa1b0867a142",
+    "title": "Rattler buffed: Magazine now 12 rounds (from 10)",
+    "content": "The Rattler received a 20% magazine increase, making it more viable for sustained engagements. Good budget alternative.",
+    "tags": [
+      "weapons",
+      "meta"
+    ],
+    "source": "Patch Notes",
+    "url": null,
+    "score": 320,
+    "scraped_at": "2026-01-20T01:39:43.021263",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "da2d7705686f",
+    "title": "Don't place Flamethrower Traps directly in doorways",
+    "content": "Enemies can trigger and destroy them before entering. Place them slightly inside or to the side for better effectiveness.",
+    "tags": [
+      "pve",
+      "builds"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 300,
+    "scraped_at": "2026-01-20T01:39:43.021234",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "02df436e138c",
+    "title": "Deposit ARC Field Crates at Field Depots for free supplies",
+    "content": "Those large metal crates you can carry? Take them to Field Depot extraction machines for loot rewards. Many players miss this mechanic.",
+    "tags": [
+      "pve",
+      "maps"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 300,
+    "scraped_at": "2026-01-20T01:39:43.021276",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "35cb152f5e5a",
+    "title": "Announce yourself when entering buildings",
+    "content": "In friendly lobbies, use proximity voice chat to call out 'friendly' when entering occupied buildings. Reduces friendly fire incidents significantly.",
+    "tags": [
+      "pvp",
+      "general"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 280,
+    "scraped_at": "2026-01-20T01:39:43.021252",
+    "isNew": false,
+    "hot": false
+  },
+  {
+    "id": "3d1917aa1b89",
+    "title": "Free loadouts are underrated for learning maps",
+    "content": "Use free loadouts when exploring new areas. Lower stakes mean you can focus on learning extraction points and loot spawns without risk.",
+    "tags": [
+      "general",
+      "maps"
+    ],
+    "source": "Community",
+    "url": null,
+    "score": 250,
+    "scraped_at": "2026-01-20T01:39:43.021278",
+    "isNew": false,
+    "hot": false
+  }
+]
