@@ -2,8 +2,8 @@ name: Daily Arc Raiders Tips Scraper
 
 on:
   schedule:
-    - cron: '0 6 * * *'
-  workflow_dispatch:
+    - cron: '0 6 * * *'  # Run daily at 6 AM UTC
+  workflow_dispatch:  # Allow manual trigger
   push:
     branches: [main]
     paths:
@@ -15,15 +15,38 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python scraper.py
-      - run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
+          
+      - name: 🔍 Run scraper
+        run: python scraper.py
+        
+      - name: 📤 Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add data/
-          git diff --staged --quiet || git commit -m "Update tips - $(date +'%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "🔄 Update tips - $(date +'%Y-%m-%d %H:%M UTC')"
           git push
+          
+      - name: 📊 Generate summary
+        run: |
+          echo "## 🎯 Arc Raiders Tips Scraper Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/tips.json ]; then
+            TIP_COUNT=$(python -c "import json; print(len(json.load(open('data/tips.json'))))")
+            HOT_COUNT=$(python -c "import json; print(len([t for t in json.load(open('data/tips.json')) if t.get('hot')]))")
+            echo "✅ **$TIP_COUNT tips** indexed" >> $GITHUB_STEP_SUMMARY
+            echo "🔥 **$HOT_COUNT hot tips** detected" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ No tips data generated" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "⏰ Last run: $(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY

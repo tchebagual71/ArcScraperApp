@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Arc Raiders Tips & Guides | Daily Meta, Builds & Strategies (2025)</title>
+    <meta name="description" content="The ultimate Arc Raiders companion. Daily updated tips, meta builds, weapon guides, map strategies, and community intel for Embark Studios' extraction shooter. Master PvP & PvE.">
+    <meta name="keywords" content="Arc Raiders, Arc Raiders tips, Arc Raiders guide, Arc Raiders builds, Arc Raiders meta, Arc Raiders weapons, extraction shooter, Embark Studios, Arc Raiders 2025, Arc Raiders loadouts, Arc Raiders maps, Dam Battlegrounds, Spaceport, PvP guide, PvE guide">
+    <meta name="author" content="Arc Raiders Community">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tchebagual71.github.io/ArcScraperApp/">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arc Raiders Tips & Guides | Daily Updated Meta & Strategies">
+    <meta property="og:description" content="Your daily source for Arc Raiders tips, meta builds, and community strategies. Updated every 24 hours with the latest intel from Reddit, Steam, and veteran players.">
+    <meta property="og:url" content="https://tchebagual71.github.io/ArcScraperApp/">
+    <meta property="og:site_name" content="Arc Raiders Tips Hub">
+    <meta property="og:image" content="https://tchebagual71.github.io/ArcScraperApp/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arc Raiders Tips & Guides | Daily Meta Updates">
+    <meta name="twitter:description" content="Daily updated Arc Raiders tips, builds, and strategies from the community.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Arc Raiders Tips Hub",
+        "description": "Daily updated tips, guides, and meta builds for Arc Raiders",
+        "url": "https://tchebagual71.github.io/ArcScraperApp/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tchebagual71.github.io/ArcScraperApp/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Arc Raiders authentic color palette */
+            --ar-cream: #eae0cd;
+            --ar-cream-dark: #d4c9b5;
+            --ar-bg-dark: #0d0d0f;
+            --ar-bg-card: #151518;
+            --ar-bg-hover: #1a1a1e;
+            --ar-border: #2a2a30;
+            
+            /* Rainbow stripe colors (synthwave/Atari inspired) */
+            --stripe-red: #ff4d4d;
+            --stripe-orange: #ff8c42;
+            --stripe-yellow: #ffd93d;
+            --stripe-green: #6bcb77;
+            --stripe-blue: #4d96ff;
+            --stripe-purple: #9b59b6;
+            
+            /* Functional colors */
+            --accent-primary: #ff8c42;
+            --accent-secondary: #4d96ff;
+            --success: #6bcb77;
+            --danger: #ff4d4d;
+            --text-primary: #eae0cd;
+            --text-secondary: #9a9a9a;
+            --text-muted: #5a5a5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ar-bg-dark);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Rainbow stripe decoration */
+        .rainbow-stripe {
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--stripe-red) 0%, 
+                var(--stripe-orange) 20%, 
+                var(--stripe-yellow) 40%, 
+                var(--stripe-green) 60%, 
+                var(--stripe-blue) 80%, 
+                var(--stripe-purple) 100%
+            );
+        }
+
+        .rainbow-stripe-vertical {
+            width: 4px;
+            background: linear-gradient(180deg, 
+                var(--stripe-red) 0%, 
+                var(--stripe-orange) 20%, 
+                var(--stripe-yellow) 40%, 
+                var(--stripe-green) 60%, 
+                var(--stripe-blue) 80%, 
+                var(--stripe-purple) 100%
+            );
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, #111113 0%, var(--ar-bg-dark) 100%);
+            border-bottom: 1px solid var(--ar-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--stripe-orange), var(--stripe-yellow), var(--stripe-green), var(--stripe-blue));
+            clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+        }
+
+        .logo-icon::after {
+            content: 'A';
+            position: relative;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--ar-bg-dark);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--ar-cream);
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            border-radius: 4px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(107, 203, 119, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(107, 203, 119, 0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, var(--ar-bg-dark) 0%, #0a0a0c 100%);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(255, 140, 66, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(77, 150, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--ar-cream);
+            margin-bottom: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--stripe-orange), var(--stripe-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            background: var(--ar-bg-card);
+            border-top: 1px solid var(--ar-border);
+            border-bottom: 1px solid var(--ar-border);
+            padding: 1rem 1.5rem;
+        }
+
+        .quick-links-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: var(--ar-bg-dark);
+            border: 1px solid var(--ar-border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quick-link:hover, .quick-link.active {
+            border-color: var(--accent-primary);
+            color: var(--ar-cream);
+            background: var(--ar-bg-hover);
+        }
+
+        .quick-link.active {
+            background: var(--accent-primary);
+            color: var(--ar-bg-dark);
+            border-color: var(--accent-primary);
+        }
+
+        .quick-link-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ar-cream);
+        }
+
+        .section-count {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            color: var(--text-muted);
+        }
+
+        /* Tips Grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Tip Cards */
+        .tip-card {
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            padding: 1.25rem;
+            position: relative;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(180deg, var(--stripe-orange), var(--stripe-yellow));
+            transition: width 0.25s ease;
+        }
+
+        .tip-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .tip-card:hover::before {
+            width: 4px;
+        }
+
+        .tip-card.hot::before {
+            width: 4px;
+            background: linear-gradient(180deg, var(--stripe-red), var(--stripe-orange));
+        }
+
+        .tip-card.meta::before {
+            width: 4px;
+            background: linear-gradient(180deg, var(--stripe-blue), var(--stripe-purple));
+        }
+
+        .tip-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 0.2rem 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+        }
+
+        .tag.new { background: var(--accent-primary); color: var(--ar-bg-dark); }
+        .tag.hot { background: var(--danger); color: white; }
+        .tag.weapons { background: rgba(255, 140, 66, 0.15); color: var(--stripe-orange); border: 1px solid rgba(255, 140, 66, 0.3); }
+        .tag.builds { background: rgba(77, 150, 255, 0.15); color: var(--stripe-blue); border: 1px solid rgba(77, 150, 255, 0.3); }
+        .tag.maps { background: rgba(255, 217, 61, 0.15); color: var(--stripe-yellow); border: 1px solid rgba(255, 217, 61, 0.3); }
+        .tag.pvp { background: rgba(255, 77, 77, 0.15); color: var(--stripe-red); border: 1px solid rgba(255, 77, 77, 0.3); }
+        .tag.pve { background: rgba(107, 203, 119, 0.15); color: var(--success); border: 1px solid rgba(107, 203, 119, 0.3); }
+        .tag.meta { background: rgba(155, 89, 182, 0.15); color: var(--stripe-purple); border: 1px solid rgba(155, 89, 182, 0.3); }
+        .tag.general { background: rgba(154, 154, 154, 0.15); color: var(--text-secondary); border: 1px solid rgba(154, 154, 154, 0.3); }
+
+        .tip-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ar-cream);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .tip-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .tip-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .tip-source a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+        }
+
+        .tip-source a:hover {
+            text-decoration: underline;
+        }
+
+        .tip-score {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Builds Section */
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .build-card {
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            overflow: hidden;
+        }
+
+        .build-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(90deg, rgba(255, 140, 66, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .build-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ar-cream);
+        }
+
+        .build-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            background: var(--ar-bg-dark);
+            border: 1px solid var(--ar-border);
+            text-transform: uppercase;
+        }
+
+        .build-type.pvp { color: var(--stripe-red); border-color: var(--stripe-red); }
+        .build-type.pve { color: var(--success); border-color: var(--success); }
+        .build-type.mixed { color: var(--stripe-yellow); border-color: var(--stripe-yellow); }
+
+        .build-body {
+            padding: 1rem 1.25rem;
+        }
+
+        .build-loadout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .loadout-slot {
+            background: var(--ar-bg-dark);
+            padding: 0.75rem;
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .loadout-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .loadout-item {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ar-cream);
+        }
+
+        .build-skills {
+            display: flex;
+            gap: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+        }
+
+        .skill {
+            flex: 1;
+            text-align: center;
+        }
+
+        .skill-name {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+
+        .build-notes {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--ar-border);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ar-bg-card);
+            border-top: 1px solid var(--ar-border);
+            padding: 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-status {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .tips-grid, .builds-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .build-loadout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ar-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ar-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="rainbow-stripe"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span class="logo-title">ARC RAIDERS</span>
+                    <span class="logo-subtitle">Tips & Strategies Hub</span>
+                </div>
+            </div>
+            <div class="header-status">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>Auto-Updated Daily</span>
+                </div>
+                <div class="status-badge">
+                    <span>📅 <span id="last-update">Loading...</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Daily <span>Arc Raiders</span> Intel</h1>
+            <p>Community-curated tips, meta builds, weapon guides, and extraction strategies. Aggregated from Reddit, Steam, and veteran players — updated every 24 hours.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value" id="total-tips">--</div>
+                    <div class="hero-stat-label">Tips Indexed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" id="hot-tips">--</div>
+                    <div class="hero-stat-label">Hot Tips</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">4</div>
+                    <div class="hero-stat-label">Meta Builds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="quick-links" aria-label="Filter tips by category">
+        <div class="quick-links-content">
+            <button class="quick-link active" data-filter="all">
+                <span class="quick-link-icon">📋</span> All Tips
+            </button>
+            <button class="quick-link" data-filter="hot">
+                <span class="quick-link-icon">🔥</span> Hot
+            </button>
+            <button class="quick-link" data-filter="meta">
+                <span class="quick-link-icon">📊</span> Meta
+            </button>
+            <button class="quick-link" data-filter="weapons">
+                <span class="quick-link-icon">🔫</span> Weapons
+            </button>
+            <button class="quick-link" data-filter="builds">
+                <span class="quick-link-icon">🎒</span> Builds
+            </button>
+            <button class="quick-link" data-filter="maps">
+                <span class="quick-link-icon">🗺️</span> Maps
+            </button>
+            <button class="quick-link" data-filter="pvp">
+                <span class="quick-link-icon">⚔️</span> PvP
+            </button>
+            <button class="quick-link" data-filter="pve">
+                <span class="quick-link-icon">🤖</span> PvE
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section" id="tips-section">
+            <div class="section-header">
+                <span class="section-icon">💡</span>
+                <h2 class="section-title">Latest Tips & Strategies</h2>
+                <span class="section-count" id="tips-count">Loading...</span>
+            </div>
+            <div id="tips-container" class="tips-grid">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading tips from the database...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="builds-section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                <h2 class="section-title">Current Meta Builds</h2>
+                <span class="section-count">Patch 1.11.0</span>
+            </div>
+            <div id="builds-container" class="builds-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="rainbow-stripe" style="margin-bottom: 1.5rem;"></div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://reddit.com/r/ArcRaiders" target="_blank" rel="noopener">📱 r/ArcRaiders</a>
+                <a href="https://steamcommunity.com/app/1808500" target="_blank" rel="noopener">🎮 Steam Community</a>
+                <a href="https://arcraiders.wiki" target="_blank" rel="noopener">📚 Official Wiki</a>
+                <a href="https://discord.gg/arcraiders" target="_blank" rel="noopener">💬 Discord</a>
+                <a href="https://github.com/tchebagual71/ArcScraperApp" target="_blank" rel="noopener">⚙️ GitHub</a>
+            </div>
+            <p class="footer-disclaimer">
+                Community project. Not affiliated with Embark Studios.<br>
+                Arc Raiders™ is a trademark of Embark Studios AB.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const DATA_PATH = window.location.hostname.includes('github.io') ? './data/' : './';
+
+        async function loadTips() {
+            const container = document.getElementById('tips-container');
+            
+            try {
+                let response = await fetch(DATA_PATH + 'tips.json');
+                if (!response.ok) {
+                    response = await fetch('./tips.json');
+                }
+                const tips = await response.json();
+                
+                if (!tips || tips.length === 0) {
+                    showEmptyState(container, 'No tips available yet. Check back soon!');
+                    return;
+                }
+
+                renderTips(tips);
+                updateStats(tips);
+                setupFilters(tips);
+                
+            } catch (error) {
+                console.error('Failed to load tips:', error);
+                showEmptyState(container, 'Unable to load tips. Please refresh the page.');
+            }
+        }
+
+        async function loadBuilds() {
+            const container = document.getElementById('builds-container');
+            
+            try {
+                let response = await fetch(DATA_PATH + 'builds.json');
+                if (!response.ok) {
+                    response = await fetch('./builds.json');
+                }
+                const builds = await response.json();
+                renderBuilds(builds);
+            } catch (error) {
+                console.error('Failed to load builds:', error);
+            }
+        }
+
+        function renderTips(tips) {
+            const container = document.getElementById('tips-container');
+            
+            container.innerHTML = tips.map(tip => {
+                const cardClasses = ['tip-card'];
+                if (tip.hot) cardClasses.push('hot');
+                if (tip.tags.includes('meta')) cardClasses.push('meta');
+                
+                return `
+                    <article class="${cardClasses.join(' ')}" data-tags="${tip.tags.join(' ')}" data-hot="${tip.hot}">
+                        <div class="tip-tags">
+                            ${tip.isNew ? '<span class="tag new">NEW</span>' : ''}
+                            ${tip.hot ? '<span class="tag hot">🔥 HOT</span>' : ''}
+                            ${tip.tags.map(tag => `<span class="tag ${tag}">${tag}</span>`).join('')}
+                        </div>
+                        <h3 class="tip-title">${escapeHtml(tip.title)}</h3>
+                        <p class="tip-content">${escapeHtml(tip.content)}</p>
+                        <div class="tip-footer">
+                            <div class="tip-source">
+                                ${tip.source}
+                                ${tip.url ? ` • <a href="${tip.url}" target="_blank" rel="noopener">View Source</a>` : ''}
+                            </div>
+                            <div class="tip-score">▲ ${tip.score || 0}</div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function renderBuilds(builds) {
+            const container = document.getElementById('builds-container');
+            
+            if (!builds || builds.length === 0) return;
+
+            container.innerHTML = builds.map(build => {
+                const typeClass = build.type.toLowerCase().replace(' ', '-');
+                return `
+                    <div class="build-card">
+                        <div class="build-header">
+                            <span class="build-name">${escapeHtml(build.name)}</span>
+                            <span class="build-type ${typeClass}">${build.type}</span>
+                        </div>
+                        <div class="build-body">
+                            <div class="build-loadout">
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Primary</div>
+                                    <div class="loadout-item">${escapeHtml(build.primary)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Secondary</div>
+                                    <div class="loadout-item">${escapeHtml(build.secondary)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Sidearm</div>
+                                    <div class="loadout-item">${escapeHtml(build.sidearm)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Augment</div>
+                                    <div class="loadout-item">${escapeHtml(build.augment)}</div>
+                                </div>
+                            </div>
+                            <div class="build-skills">
+                                <div class="skill">
+                                    <div class="skill-name">Mobility</div>
+                                    <div class="skill-value">${build.skills.mobility}</div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Conditioning</div>
+                                    <div class="skill-value">${build.skills.conditioning}</div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Survival</div>
+                                    <div class="skill-value">${build.skills.survival}</div>
+                                </div>
+                            </div>
+                            ${build.notes ? `<div class="build-notes">"${escapeHtml(build.notes)}"</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateStats(tips) {
+            document.getElementById('total-tips').textContent = tips.length;
+            document.getElementById('hot-tips').textContent = tips.filter(t => t.hot).length;
+            document.getElementById('tips-count').textContent = `${tips.length} tips`;
+            
+            const lastUpdate = tips[0]?.scraped_at;
+            if (lastUpdate) {
+                const date = new Date(lastUpdate);
+                document.getElementById('last-update').textContent = date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+        }
+
+        function setupFilters(tips) {
+            document.querySelectorAll('.quick-link').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.quick-link').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    filterTips(filter);
+                });
+            });
+        }
+
+        function filterTips(filter) {
+            const cards = document.querySelectorAll('.tip-card');
+            let visible = 0;
+
+            cards.forEach(card => {
+                const tags = card.dataset.tags || '';
+                const isHot = card.dataset.hot === 'true';
+                
+                let show = filter === 'all';
+                if (filter === 'hot' && isHot) show = true;
+                if (filter !== 'all' && filter !== 'hot' && tags.includes(filter)) show = true;
+
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            document.getElementById('tips-count').textContent = `${visible} tips`;
+        }
+
+        function showEmptyState(container, message) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">📭</div>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTips();
+            loadBuilds();
+        });
+    </script>
+</body>
+</html>
