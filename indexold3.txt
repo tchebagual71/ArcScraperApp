@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Arc Raiders Tips & Guides | Daily Meta, Builds & Strategies (2025)</title>
+    <meta name="description" content="The ultimate Arc Raiders companion. Daily updated tips, meta builds, weapon guides, map strategies, and community intel for Embark Studios' extraction shooter. Master PvP & PvE.">
+    <meta name="keywords" content="Arc Raiders, Arc Raiders tips, Arc Raiders guide, Arc Raiders builds, Arc Raiders meta, Arc Raiders weapons, extraction shooter, Embark Studios, Arc Raiders 2025, Arc Raiders loadouts, Arc Raiders maps, Dam Battlegrounds, Spaceport, PvP guide, PvE guide, Arc Raiders beginner, Arc Raiders cheat sheet">
+    <meta name="author" content="Arc Raiders Community">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tchebagual71.github.io/ArcScraperApp/">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arc Raiders Tips Hub | Daily Updated Guides & Meta Builds">
+    <meta property="og:description" content="Your daily source for Arc Raiders tips, meta builds, and community strategies. Beginner guides to advanced tactics — updated every 24 hours.">
+    <meta property="og:url" content="https://tchebagual71.github.io/ArcScraperApp/">
+    <meta property="og:site_name" content="Arc Raiders Tips Hub">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arc Raiders Tips Hub | Daily Meta Updates">
+    <meta name="twitter:description" content="Daily updated Arc Raiders tips, builds, and strategies. From beginner to pro.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Arc Raiders Tips Hub",
+        "description": "Daily updated tips, guides, and meta builds for Arc Raiders",
+        "url": "https://tchebagual71.github.io/ArcScraperApp/"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --ar-cream: #eae0cd;
+            --ar-cream-dark: #d4c9b5;
+            --ar-bg-dark: #0d0d0f;
+            --ar-bg-card: #151518;
+            --ar-bg-hover: #1a1a1e;
+            --ar-bg-elevated: #1e1e22;
+            --ar-border: #2a2a30;
+            --ar-border-light: #3a3a42;
+            
+            --stripe-red: #ff4d4d;
+            --stripe-orange: #ff8c42;
+            --stripe-yellow: #ffd93d;
+            --stripe-green: #6bcb77;
+            --stripe-blue: #4d96ff;
+            --stripe-purple: #9b59b6;
+            
+            --accent-primary: #ff8c42;
+            --accent-secondary: #4d96ff;
+            --success: #6bcb77;
+            --danger: #ff4d4d;
+            --warning: #ffd93d;
+            --text-primary: #eae0cd;
+            --text-secondary: #9a9a9a;
+            --text-muted: #5a5a5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ar-bg-dark);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Rainbow stripe */
+        .rainbow-stripe {
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--stripe-red) 0%, 
+                var(--stripe-orange) 20%, 
+                var(--stripe-yellow) 40%, 
+                var(--stripe-green) 60%, 
+                var(--stripe-blue) 80%, 
+                var(--stripe-purple) 100%
+            );
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, #111113 0%, var(--ar-bg-dark) 100%);
+            border-bottom: 1px solid var(--ar-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--stripe-orange), var(--stripe-yellow), var(--stripe-green), var(--stripe-blue));
+            clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+        }
+
+        .logo-icon::after {
+            content: 'A';
+            position: relative;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--ar-bg-dark);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--ar-cream);
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .header-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.9rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            color: var(--text-secondary);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .header-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--ar-cream);
+        }
+
+        .header-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--ar-bg-dark);
+        }
+
+        .bookmark-count {
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .patch-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.7rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+
+        /* Welcome Banner (First Visit) */
+        .welcome-banner {
+            background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(77, 150, 255, 0.1) 100%);
+            border-bottom: 1px solid var(--ar-border);
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .welcome-banner.show {
+            display: block;
+        }
+
+        .welcome-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .welcome-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .welcome-text h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            color: var(--ar-cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .welcome-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .welcome-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .welcome-feature span:first-child {
+            font-size: 1rem;
+        }
+
+        .welcome-dismiss {
+            background: transparent;
+            border: 1px solid var(--ar-border);
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .welcome-dismiss:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+
+        /* Featured Tip of the Day */
+        .featured-section {
+            background: linear-gradient(180deg, var(--ar-bg-dark) 0%, #0a0a0c 100%);
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .featured-content {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .featured-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--warning);
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-card {
+            background: var(--ar-bg-card);
+            border: 2px solid var(--warning);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--stripe-orange), var(--stripe-yellow), var(--stripe-green));
+        }
+
+        .featured-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: var(--ar-cream);
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-body {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .featured-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .featured-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .featured-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--ar-bg-dark);
+            border: 1px solid var(--ar-border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .featured-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--ar-cream);
+        }
+
+        .featured-btn.bookmarked {
+            background: var(--warning);
+            border-color: var(--warning);
+            color: var(--ar-bg-dark);
+        }
+
+        /* What's New Today */
+        .whats-new {
+            background: var(--ar-bg-card);
+            border-bottom: 1px solid var(--ar-border);
+            padding: 1rem 1.5rem;
+        }
+
+        .whats-new-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whats-new-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .whats-new-items {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .whats-new-item {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .whats-new-item strong {
+            color: var(--ar-cream);
+        }
+
+        .update-time {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Search and Filters Bar */
+        .controls-bar {
+            background: var(--ar-bg-dark);
+            border-bottom: 1px solid var(--ar-border);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 58px;
+            z-index: 90;
+        }
+
+        .controls-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .skill-toggle {
+            display: flex;
+            border: 1px solid var(--ar-border);
+            background: var(--ar-bg-card);
+        }
+
+        .skill-btn {
+            padding: 0.7rem 1.2rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .skill-btn:not(:last-child) {
+            border-right: 1px solid var(--ar-border);
+        }
+
+        .skill-btn:hover {
+            color: var(--ar-cream);
+            background: var(--ar-bg-hover);
+        }
+
+        .skill-btn.active {
+            background: var(--accent-secondary);
+            color: var(--ar-bg-dark);
+        }
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.9rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--ar-cream);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--ar-bg-dark);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .section-icon {
+            font-size: 1.3rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ar-cream);
+        }
+
+        .section-count {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            color: var(--text-muted);
+        }
+
+        /* Tips Grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Tip Cards */
+        .tip-card {
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            padding: 1.25rem;
+            position: relative;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tip-card.hidden {
+            display: none;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(180deg, var(--stripe-orange), var(--stripe-yellow));
+            transition: width 0.25s ease;
+        }
+
+        .tip-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .tip-card:hover::before {
+            width: 4px;
+        }
+
+        .tip-card.hot::before {
+            width: 4px;
+            background: linear-gradient(180deg, var(--stripe-red), var(--stripe-orange));
+        }
+
+        .tip-card.meta::before {
+            width: 4px;
+            background: linear-gradient(180deg, var(--stripe-blue), var(--stripe-purple));
+        }
+
+        .tip-card.beginner {
+            border-left: 3px solid var(--success);
+        }
+
+        .tip-card.advanced {
+            border-left: 3px solid var(--stripe-purple);
+        }
+
+        .tip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem;
+            font-weight: 500;
+            padding: 0.15rem 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+        }
+
+        .tag.new { background: var(--accent-primary); color: var(--ar-bg-dark); }
+        .tag.hot { background: var(--danger); color: white; }
+        .tag.beginner { background: rgba(107, 203, 119, 0.2); color: var(--success); border: 1px solid var(--success); }
+        .tag.advanced { background: rgba(155, 89, 182, 0.2); color: var(--stripe-purple); border: 1px solid var(--stripe-purple); }
+        .tag.weapons { background: rgba(255, 140, 66, 0.15); color: var(--stripe-orange); }
+        .tag.builds { background: rgba(77, 150, 255, 0.15); color: var(--stripe-blue); }
+        .tag.maps { background: rgba(255, 217, 61, 0.15); color: var(--stripe-yellow); }
+        .tag.pvp { background: rgba(255, 77, 77, 0.15); color: var(--stripe-red); }
+        .tag.pve { background: rgba(107, 203, 119, 0.15); color: var(--success); }
+        .tag.meta { background: rgba(155, 89, 182, 0.15); color: var(--stripe-purple); }
+        .tag.general { background: rgba(154, 154, 154, 0.15); color: var(--text-secondary); }
+
+        .tip-bookmark {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.25rem;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .tip-bookmark:hover {
+            color: var(--warning);
+            transform: scale(1.1);
+        }
+
+        .tip-bookmark.bookmarked {
+            color: var(--warning);
+        }
+
+        .tip-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ar-cream);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .tip-content {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .tip-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .tip-source a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+        }
+
+        .tip-source a:hover {
+            text-decoration: underline;
+        }
+
+        .tip-score {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Quick Reference Section */
+        .cheat-sheets {
+            margin-top: 3rem;
+        }
+
+        .cheat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .cheat-card {
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            overflow: hidden;
+        }
+
+        .cheat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: linear-gradient(90deg, rgba(77, 150, 255, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid var(--ar-border);
+            cursor: pointer;
+        }
+
+        .cheat-header:hover {
+            background: linear-gradient(90deg, rgba(77, 150, 255, 0.15) 0%, transparent 100%);
+        }
+
+        .cheat-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ar-cream);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cheat-toggle {
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .cheat-card.open .cheat-toggle {
+            transform: rotate(180deg);
+        }
+
+        .cheat-body {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .cheat-card.open .cheat-body {
+            padding: 1rem;
+            max-height: 600px;
+        }
+
+        .cheat-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .cheat-table th,
+        .cheat-table td {
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .cheat-table th {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: var(--ar-bg-dark);
+        }
+
+        .cheat-table td {
+            color: var(--text-secondary);
+        }
+
+        .cheat-table td:first-child {
+            color: var(--ar-cream);
+            font-weight: 600;
+        }
+
+        .cheat-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stat-good { color: var(--success); }
+        .stat-bad { color: var(--danger); }
+        .stat-neutral { color: var(--warning); }
+
+        /* Builds Section */
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .build-card {
+            background: var(--ar-bg-card);
+            border: 1px solid var(--ar-border);
+            overflow: hidden;
+        }
+
+        .build-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 1rem;
+            background: linear-gradient(90deg, rgba(255, 140, 66, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid var(--ar-border);
+        }
+
+        .build-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--ar-cream);
+        }
+
+        .build-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--ar-bg-dark);
+            border: 1px solid var(--ar-border);
+            text-transform: uppercase;
+        }
+
+        .build-type.pvp { color: var(--stripe-red); border-color: var(--stripe-red); }
+        .build-type.pve { color: var(--success); border-color: var(--success); }
+        .build-type.mixed { color: var(--stripe-yellow); border-color: var(--stripe-yellow); }
+        .build-type.loot { color: var(--stripe-blue); border-color: var(--stripe-blue); }
+
+        .build-body {
+            padding: 1rem;
+        }
+
+        .build-loadout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .loadout-slot {
+            background: var(--ar-bg-dark);
+            padding: 0.6rem 0.75rem;
+            border-left: 2px solid var(--accent-primary);
+        }
+
+        .loadout-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.15rem;
+        }
+
+        .loadout-item {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--ar-cream);
+        }
+
+        .build-skills {
+            display: flex;
+            gap: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+        }
+
+        .skill {
+            flex: 1;
+            text-align: center;
+        }
+
+        .skill-name {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.15rem;
+        }
+
+        .skill-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+
+        .build-notes {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ar-border);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Bookmarks Panel */
+        .bookmarks-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--ar-bg-card);
+            border-left: 1px solid var(--ar-border);
+            z-index: 200;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmarks-panel.open {
+            right: 0;
+        }
+
+        .bookmarks-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 199;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .bookmarks-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .bookmarks-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--ar-border);
+            background: var(--ar-bg-dark);
+        }
+
+        .bookmarks-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            color: var(--ar-cream);
+        }
+
+        .bookmarks-close {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .bookmarks-close:hover {
+            color: var(--ar-cream);
+        }
+
+        .bookmarks-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .bookmarks-empty {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+
+        .bookmarks-empty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bookmark-item {
+            background: var(--ar-bg-dark);
+            border: 1px solid var(--ar-border);
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bookmark-item-title {
+            font-weight: 700;
+            color: var(--ar-cream);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .bookmark-item-content {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .bookmark-item-remove {
+            background: transparent;
+            border: 1px solid var(--danger);
+            color: var(--danger);
+            padding: 0.3rem 0.6rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .bookmark-item-remove:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--ar-border);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ar-bg-card);
+            border-top: 1px solid var(--ar-border);
+            padding: 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0.6rem 1rem;
+            }
+
+            .logo-title {
+                font-size: 1rem;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .welcome-content {
+                flex-direction: column;
+            }
+
+            .welcome-dismiss {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .controls-bar {
+                top: 52px;
+            }
+
+            .search-row {
+                flex-direction: column;
+            }
+
+            .skill-toggle {
+                width: 100%;
+            }
+
+            .skill-btn {
+                flex: 1;
+            }
+
+            .tips-grid, .builds-grid, .cheat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .whats-new-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .update-time {
+                margin-left: 0;
+            }
+
+            .bookmarks-panel {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ar-bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--ar-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="rainbow-stripe"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span class="logo-title">ARC RAIDERS HUB</span>
+                    <span class="logo-subtitle">Tips • Builds • Strategies</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span class="patch-badge">Patch 1.11.0</span>
+                <button class="header-btn" id="bookmarks-btn" aria-label="View bookmarked tips">
+                    🔖 Saved <span class="bookmark-count" id="bookmark-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Banner for First-Time Visitors -->
+    <div class="welcome-banner" id="welcome-banner">
+        <div class="welcome-content">
+            <div class="welcome-icon">👋</div>
+            <div class="welcome-text">
+                <h2>Welcome, Raider!</h2>
+                <p>Your daily source for Arc Raiders tips, builds, and strategies — auto-updated every 24 hours from Reddit, Steam, and veteran players.</p>
+                <div class="welcome-features">
+                    <div class="welcome-feature"><span>🔍</span> Search any tip</div>
+                    <div class="welcome-feature"><span>🎯</span> Beginner/Advanced modes</div>
+                    <div class="welcome-feature"><span>🔖</span> Save favorites</div>
+                    <div class="welcome-feature"><span>📊</span> Quick reference cheat sheets</div>
+                </div>
+            </div>
+            <button class="welcome-dismiss" id="welcome-dismiss">Got it ✓</button>
+        </div>
+    </div>
+
+    <!-- Featured Tip of the Day -->
+    <section class="featured-section">
+        <div class="featured-content">
+            <div class="featured-label">
+                <span>⭐</span> TIP OF THE DAY
+            </div>
+            <div class="featured-card" id="featured-tip">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's New Today -->
+    <div class="whats-new">
+        <div class="whats-new-content">
+            <div class="whats-new-label">
+                <span>🆕</span> TODAY'S UPDATES
+            </div>
+            <div class="whats-new-items" id="whats-new-items">
+                <span class="whats-new-item">Loading...</span>
+            </div>
+            <div class="update-time" id="update-time">--</div>
+        </div>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="controls-bar">
+        <div class="controls-content">
+            <div class="search-row">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Search tips... (e.g., Matriarch, Tempest, extraction)">
+                </div>
+                <div class="skill-toggle">
+                    <button class="skill-btn active" data-skill="all">All Levels</button>
+                    <button class="skill-btn" data-skill="beginner">🌱 Beginner</button>
+                    <button class="skill-btn" data-skill="advanced">⚡ Advanced</button>
+                </div>
+            </div>
+            <div class="filter-row">
+                <button class="filter-btn active" data-filter="all">📋 All</button>
+                <button class="filter-btn" data-filter="hot">🔥 Hot</button>
+                <button class="filter-btn" data-filter="meta">📊 Meta</button>
+                <button class="filter-btn" data-filter="weapons">🔫 Weapons</button>
+                <button class="filter-btn" data-filter="builds">🎒 Builds</button>
+                <button class="filter-btn" data-filter="maps">🗺️ Maps</button>
+                <button class="filter-btn" data-filter="pvp">⚔️ PvP</button>
+                <button class="filter-btn" data-filter="pve">🤖 PvE</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Tips Section -->
+        <section class="section" id="tips-section">
+            <div class="section-header">
+                <span class="section-icon">💡</span>
+                <h2 class="section-title">Tips & Strategies</h2>
+                <span class="section-count" id="tips-count">Loading...</span>
+            </div>
+            <div id="tips-container" class="tips-grid">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading tips...</p>
+                </div>
+            </div>
+            <div class="no-results" id="no-results" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <p>No tips match your search. Try different keywords or filters.</p>
+            </div>
+        </section>
+
+        <!-- Quick Reference Cheat Sheets -->
+        <section class="section cheat-sheets">
+            <div class="section-header">
+                <span class="section-icon">📊</span>
+                <h2 class="section-title">Quick Reference</h2>
+                <span class="section-count">Cheat Sheets</span>
+            </div>
+            <div class="cheat-grid">
+                <!-- Weapon Damage -->
+                <div class="cheat-card open">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">🔫 Weapon Tier List</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>Weapon</th>
+                                    <th>Type</th>
+                                    <th>PvP</th>
+                                    <th>PvE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tempest</td><td>SMG</td><td class="stat-good">S</td><td class="stat-neutral">B</td></tr>
+                                <tr><td>Stitcher</td><td>SMG</td><td class="stat-good">S</td><td class="stat-neutral">C</td></tr>
+                                <tr><td>Hullcracker</td><td>Launcher</td><td class="stat-bad">D</td><td class="stat-good">S</td></tr>
+                                <tr><td>Bettina</td><td>AR</td><td class="stat-neutral">B</td><td class="stat-good">A</td></tr>
+                                <tr><td>Venator</td><td>DMR</td><td class="stat-neutral">B</td><td class="stat-neutral">B</td></tr>
+                                <tr><td>Rattler</td><td>Pistol</td><td class="stat-neutral">C</td><td class="stat-neutral">B</td></tr>
+                                <tr><td>Ferro</td><td>BR</td><td class="stat-neutral">B</td><td class="stat-good">A</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ARC Weaknesses -->
+                <div class="cheat-card">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">🤖 ARC Weak Points</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>ARC Type</th>
+                                    <th>Weak Point</th>
+                                    <th>Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Leaper</td><td>Head/Core</td><td>Maintain distance, don't turn back</td></tr>
+                                <tr><td>Matriarch</td><td>Abdomen</td><td>Hullcracker, kite around cover</td></tr>
+                                <tr><td>Bombardier</td><td>Artillery pods</td><td>Ferro to destroy pods first</td></tr>
+                                <tr><td>Sentinel</td><td>Central core</td><td>Sustained fire, dodge sweeps</td></tr>
+                                <tr><td>Bastion</td><td>Back vents</td><td>Flank, explosive damage</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Skill Point Allocation -->
+                <div class="cheat-card">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">📈 Skill Point Priority</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>Playstyle</th>
+                                    <th>Mobility</th>
+                                    <th>Cond.</th>
+                                    <th>Surv.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aggressive PvP</td><td class="stat-good">45-50</td><td>20</td><td>5-10</td></tr>
+                                <tr><td>PvE Tank</td><td>25-30</td><td class="stat-good">30-35</td><td>15</td></tr>
+                                <tr><td>Balanced</td><td>35</td><td>25</td><td>15</td></tr>
+                                <tr><td>Loot Runner</td><td class="stat-good">50+</td><td>15</td><td>10</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+                            💡 Mobility should always be your first investment (30-50 points).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Extraction Tips -->
+                <div class="cheat-card">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">🚀 Extraction Checklist</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>Before Extracting</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Check Safe Pocket is full</td><td class="stat-good">Critical</td></tr>
+                                <tr><td>Listen for nearby players</td><td class="stat-good">Critical</td></tr>
+                                <tr><td>Clear area of ARCs</td><td class="stat-neutral">High</td></tr>
+                                <tr><td>Have healing ready</td><td class="stat-neutral">High</td></tr>
+                                <tr><td>Check for campers</td><td class="stat-neutral">Medium</td></tr>
+                                <tr><td>5-min rule: extract early</td><td class="stat-neutral">Medium</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Keybinds -->
+                <div class="cheat-card">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">⌨️ Essential Keybinds (PC)</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Default</th>
+                                    <th>Pro Tip</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Ping</td><td>Middle Mouse</td><td>Use constantly for team</td></tr>
+                                <tr><td>Lean</td><td>Q / E</td><td>Essential for corner fights</td></tr>
+                                <tr><td>Quick Heal</td><td>4</td><td>Rebind to mouse side</td></tr>
+                                <tr><td>Inventory</td><td>Tab</td><td>Practice quick sorting</td></tr>
+                                <tr><td>Push-to-Talk</td><td>V</td><td>Use to signal friendly</td></tr>
+                                <tr><td>Crouch (Toggle)</td><td>C</td><td>Crouch spam = friendly</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Map Quick Tips -->
+                <div class="cheat-card">
+                    <div class="cheat-header" onclick="toggleCheat(this)">
+                        <span class="cheat-title">🗺️ Map Loot Zones</span>
+                        <span class="cheat-toggle">▼</span>
+                    </div>
+                    <div class="cheat-body">
+                        <table class="cheat-table">
+                            <thead>
+                                <tr>
+                                    <th>Map</th>
+                                    <th>Best Loot</th>
+                                    <th>Danger</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Dam Battlegrounds</td><td>Control Room, Dam Top</td><td class="stat-neutral">Medium</td></tr>
+                                <tr><td>Spaceport</td><td>Hangars, Cargo Bay</td><td class="stat-bad">High</td></tr>
+                                <tr><td>Buried City</td><td>Underground, Mall</td><td class="stat-good">Low-Med</td></tr>
+                                <tr><td>Stella Montis</td><td>Observatory, Labs</td><td class="stat-bad">High</td></tr>
+                                <tr><td>Blue Gate</td><td>Warehouses</td><td class="stat-neutral">Medium</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Builds Section -->
+        <section class="section" id="builds-section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                <h2 class="section-title">Meta Builds</h2>
+                <span class="section-count">Patch 1.11.0</span>
+            </div>
+            <div id="builds-container" class="builds-grid"></div>
+        </section>
+    </main>
+
+    <!-- Bookmarks Panel -->
+    <div class="bookmarks-overlay" id="bookmarks-overlay"></div>
+    <div class="bookmarks-panel" id="bookmarks-panel">
+        <div class="bookmarks-header">
+            <span class="bookmarks-title">🔖 Saved Tips</span>
+            <button class="bookmarks-close" id="bookmarks-close">&times;</button>
+        </div>
+        <div class="bookmarks-body" id="bookmarks-body">
+            <div class="bookmarks-empty">
+                <div class="bookmarks-empty-icon">📑</div>
+                <p>No saved tips yet.<br>Click the 🔖 on any tip to save it!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="rainbow-stripe" style="margin-bottom: 1.5rem;"></div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://reddit.com/r/ArcRaiders" target="_blank" rel="noopener">📱 r/ArcRaiders</a>
+                <a href="https://steamcommunity.com/app/1808500" target="_blank" rel="noopener">🎮 Steam</a>
+                <a href="https://arcraiders.wiki" target="_blank" rel="noopener">📚 Wiki</a>
+                <a href="https://github.com/tchebagual71/ArcScraperApp" target="_blank" rel="noopener">⚙️ GitHub</a>
+            </div>
+            <p class="footer-disclaimer">
+                Community project — not affiliated with Embark Studios.<br>
+                Arc Raiders™ is a trademark of Embark Studios AB.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ============ State ============
+        let allTips = [];
+        let bookmarks = JSON.parse(localStorage.getItem('arcraiders-bookmarks') || '[]');
+        let currentFilter = 'all';
+        let currentSkill = 'all';
+        let searchQuery = '';
+
+        const DATA_PATH = window.location.hostname.includes('github.io') ? './data/' : './';
+
+        // ============ Initialization ============
+        document.addEventListener('DOMContentLoaded', () => {
+            checkFirstVisit();
+            loadTips();
+            loadBuilds();
+            setupEventListeners();
+            updateBookmarkCount();
+        });
+
+        // ============ First Visit Welcome ============
+        function checkFirstVisit() {
+            const visited = localStorage.getItem('arcraiders-visited');
+            if (!visited) {
+                document.getElementById('welcome-banner').classList.add('show');
+            }
+        }
+
+        document.getElementById('welcome-dismiss')?.addEventListener('click', () => {
+            document.getElementById('welcome-banner').classList.remove('show');
+            localStorage.setItem('arcraiders-visited', 'true');
+        });
+
+        // ============ Data Loading ============
+        async function loadTips() {
+            try {
+                let response = await fetch(DATA_PATH + 'tips.json');
+                if (!response.ok) response = await fetch('./tips.json');
+                allTips = await response.json();
+                
+                // Add skill level to tips
+                allTips = allTips.map(tip => ({
+                    ...tip,
+                    skillLevel: determineSkillLevel(tip)
+                }));
+
+                renderFeaturedTip();
+                renderWhatsNew();
+                renderTips();
+                updateStats();
+            } catch (error) {
+                console.error('Failed to load tips:', error);
+                document.getElementById('tips-container').innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">⚠️</div>
+                        <p>Unable to load tips. Please refresh.</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function loadBuilds() {
+            try {
+                let response = await fetch(DATA_PATH + 'builds.json');
+                if (!response.ok) response = await fetch('./builds.json');
+                const builds = await response.json();
+                renderBuilds(builds);
+            } catch (error) {
+                console.error('Failed to load builds:', error);
+            }
+        }
+
+        // ============ Skill Level Detection ============
+        function determineSkillLevel(tip) {
+            const beginnerKeywords = ['beginner', 'basic', 'first', 'start', 'new player', 'tip', 'safe pocket', 'free loadout', 'how to', 'extract'];
+            const advancedKeywords = ['advanced', 'pro', 'exploit', 'tech', 'fps', 'frame', 'meta', 'optimal', 'stack', 'cancel', 'animation'];
+            
+            const text = (tip.title + ' ' + tip.content).toLowerCase();
+            
+            const beginnerScore = beginnerKeywords.filter(kw => text.includes(kw)).length;
+            const advancedScore = advancedKeywords.filter(kw => text.includes(kw)).length;
+            
+            if (advancedScore > beginnerScore) return 'advanced';
+            if (beginnerScore > 0) return 'beginner';
+            return 'all';
+        }
+
+        // ============ Featured Tip ============
+        function renderFeaturedTip() {
+            const hotTips = allTips.filter(t => t.hot);
+            const featured = hotTips.length > 0 
+                ? hotTips[Math.floor(Math.random() * Math.min(hotTips.length, 5))]
+                : allTips[0];
+
+            if (!featured) return;
+
+            const isBookmarked = bookmarks.includes(featured.id);
+
+            document.getElementById('featured-tip').innerHTML = `
+                <h3 class="featured-title">${escapeHtml(featured.title)}</h3>
+                <p class="featured-body">${escapeHtml(featured.content)}</p>
+                <div class="featured-meta">
+                    <div class="featured-tags">
+                        ${featured.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('')}
+                    </div>
+                    <div class="featured-actions">
+                        <button class="featured-btn ${isBookmarked ? 'bookmarked' : ''}" onclick="toggleBookmark('${featured.id}', this)">
+                            ${isBookmarked ? '🔖 Saved' : '🔖 Save'}
+                        </button>
+                        ${featured.url ? `<a href="${featured.url}" target="_blank" rel="noopener" class="featured-btn">🔗 Source</a>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============ What's New ============
+        function renderWhatsNew() {
+            const newTips = allTips.filter(t => t.isNew);
+            const container = document.getElementById('whats-new-items');
+            
+            if (newTips.length === 0) {
+                container.innerHTML = '<span class="whats-new-item">No new tips today — check back tomorrow!</span>';
+            } else {
+                container.innerHTML = `
+                    <span class="whats-new-item"><strong>${newTips.length}</strong> new tips added</span>
+                    <span class="whats-new-item"><strong>${allTips.filter(t => t.hot).length}</strong> trending</span>
+                `;
+            }
+
+            // Update time
+            const lastUpdate = allTips[0]?.scraped_at;
+            if (lastUpdate) {
+                const date = new Date(lastUpdate);
+                document.getElementById('update-time').textContent = `Updated: ${date.toLocaleDateString('en-US', {
+                    month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                })}`;
+            }
+        }
+
+        // ============ Tips Rendering ============
+        function renderTips() {
+            const container = document.getElementById('tips-container');
+            const noResults = document.getElementById('no-results');
+            
+            let filtered = allTips;
+
+            // Apply search
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(tip => 
+                    tip.title.toLowerCase().includes(query) || 
+                    tip.content.toLowerCase().includes(query) ||
+                    tip.tags.some(t => t.includes(query))
+                );
+            }
+
+            // Apply category filter
+            if (currentFilter !== 'all') {
+                if (currentFilter === 'hot') {
+                    filtered = filtered.filter(tip => tip.hot);
+                } else {
+                    filtered = filtered.filter(tip => tip.tags.includes(currentFilter));
+                }
+            }
+
+            // Apply skill level filter
+            if (currentSkill !== 'all') {
+                filtered = filtered.filter(tip => 
+                    tip.skillLevel === currentSkill || tip.skillLevel === 'all'
+                );
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+                container.innerHTML = filtered.map(tip => renderTipCard(tip)).join('');
+            }
+
+            document.getElementById('tips-count').textContent = `${filtered.length} tips`;
+        }
+
+        function renderTipCard(tip) {
+            const isBookmarked = bookmarks.includes(tip.id);
+            const skillTag = tip.skillLevel !== 'all' ? `<span class="tag ${tip.skillLevel}">${tip.skillLevel}</span>` : '';
+            
+            return `
+                <article class="tip-card ${tip.hot ? 'hot' : ''} ${tip.tags.includes('meta') ? 'meta' : ''} ${tip.skillLevel}" 
+                         data-id="${tip.id}">
+                    <div class="tip-header">
+                        <div class="tip-tags">
+                            ${tip.isNew ? '<span class="tag new">NEW</span>' : ''}
+                            ${tip.hot ? '<span class="tag hot">🔥 HOT</span>' : ''}
+                            ${skillTag}
+                            ${tip.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('')}
+                        </div>
+                        <button class="tip-bookmark ${isBookmarked ? 'bookmarked' : ''}" 
+                                onclick="toggleBookmark('${tip.id}', this)" 
+                                aria-label="${isBookmarked ? 'Remove bookmark' : 'Bookmark this tip'}">
+                            ${isBookmarked ? '🔖' : '☆'}
+                        </button>
+                    </div>
+                    <h3 class="tip-title">${escapeHtml(tip.title)}</h3>
+                    <p class="tip-content">${escapeHtml(tip.content)}</p>
+                    <div class="tip-footer">
+                        <div class="tip-source">
+                            ${tip.source}
+                            ${tip.url ? ` • <a href="${tip.url}" target="_blank" rel="noopener">Source</a>` : ''}
+                        </div>
+                        <div class="tip-score">▲ ${tip.score || 0}</div>
+                    </div>
+                </article>
+            `;
+        }
+
+        // ============ Builds Rendering ============
+        function renderBuilds(builds) {
+            const container = document.getElementById('builds-container');
+            if (!builds || builds.length === 0) return;
+
+            container.innerHTML = builds.map(build => {
+                const typeClass = build.type.toLowerCase().replace(' ', '-');
+                return `
+                    <div class="build-card">
+                        <div class="build-header">
+                            <span class="build-name">${escapeHtml(build.name)}</span>
+                            <span class="build-type ${typeClass}">${build.type}</span>
+                        </div>
+                        <div class="build-body">
+                            <div class="build-loadout">
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Primary</div>
+                                    <div class="loadout-item">${escapeHtml(build.primary)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Secondary</div>
+                                    <div class="loadout-item">${escapeHtml(build.secondary)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Sidearm</div>
+                                    <div class="loadout-item">${escapeHtml(build.sidearm)}</div>
+                                </div>
+                                <div class="loadout-slot">
+                                    <div class="loadout-label">Augment</div>
+                                    <div class="loadout-item">${escapeHtml(build.augment)}</div>
+                                </div>
+                            </div>
+                            <div class="build-skills">
+                                <div class="skill">
+                                    <div class="skill-name">Mobility</div>
+                                    <div class="skill-value">${build.skills.mobility}</div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Conditioning</div>
+                                    <div class="skill-value">${build.skills.conditioning}</div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Survival</div>
+                                    <div class="skill-value">${build.skills.survival}</div>
+                                </div>
+                            </div>
+                            ${build.notes ? `<div class="build-notes">"${escapeHtml(build.notes)}"</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ============ Bookmarks ============
+        function toggleBookmark(tipId, btn) {
+            const index = bookmarks.indexOf(tipId);
+            if (index > -1) {
+                bookmarks.splice(index, 1);
+                btn.classList.remove('bookmarked');
+                btn.innerHTML = btn.classList.contains('featured-btn') ? '🔖 Save' : '☆';
+            } else {
+                bookmarks.push(tipId);
+                btn.classList.add('bookmarked');
+                btn.innerHTML = btn.classList.contains('featured-btn') ? '🔖 Saved' : '🔖';
+            }
+            localStorage.setItem('arcraiders-bookmarks', JSON.stringify(bookmarks));
+            updateBookmarkCount();
+            renderBookmarksPanel();
+        }
+
+        function updateBookmarkCount() {
+            document.getElementById('bookmark-count').textContent = bookmarks.length;
+        }
+
+        function renderBookmarksPanel() {
+            const body = document.getElementById('bookmarks-body');
+            
+            if (bookmarks.length === 0) {
+                body.innerHTML = `
+                    <div class="bookmarks-empty">
+                        <div class="bookmarks-empty-icon">📑</div>
+                        <p>No saved tips yet.<br>Click the ☆ on any tip to save it!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const bookmarkedTips = allTips.filter(t => bookmarks.includes(t.id));
+            body.innerHTML = bookmarkedTips.map(tip => `
+                <div class="bookmark-item">
+                    <div class="bookmark-item-title">${escapeHtml(tip.title)}</div>
+                    <div class="bookmark-item-content">${escapeHtml(tip.content.substring(0, 100))}...</div>
+                    <button class="bookmark-item-remove" onclick="removeBookmark('${tip.id}')">Remove</button>
+                </div>
+            `).join('');
+        }
+
+        function removeBookmark(tipId) {
+            const index = bookmarks.indexOf(tipId);
+            if (index > -1) {
+                bookmarks.splice(index, 1);
+                localStorage.setItem('arcraiders-bookmarks', JSON.stringify(bookmarks));
+                updateBookmarkCount();
+                renderBookmarksPanel();
+                renderTips(); // Update tip cards
+            }
+        }
+
+        // ============ Event Listeners ============
+        function setupEventListeners() {
+            // Search
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderTips();
+            });
+
+            // Category filters
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    renderTips();
+                });
+            });
+
+            // Skill level toggle
+            document.querySelectorAll('.skill-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentSkill = btn.dataset.skill;
+                    renderTips();
+                });
+            });
+
+            // Bookmarks panel
+            document.getElementById('bookmarks-btn').addEventListener('click', () => {
+                document.getElementById('bookmarks-panel').classList.add('open');
+                document.getElementById('bookmarks-overlay').classList.add('open');
+                renderBookmarksPanel();
+            });
+
+            document.getElementById('bookmarks-close').addEventListener('click', closeBookmarksPanel);
+            document.getElementById('bookmarks-overlay').addEventListener('click', closeBookmarksPanel);
+        }
+
+        function closeBookmarksPanel() {
+            document.getElementById('bookmarks-panel').classList.remove('open');
+            document.getElementById('bookmarks-overlay').classList.remove('open');
+        }
+
+        // ============ Cheat Sheet Toggle ============
+        function toggleCheat(header) {
+            const card = header.parentElement;
+            card.classList.toggle('open');
+        }
+
+        // ============ Stats ============
+        function updateStats() {
+            document.getElementById('tips-count').textContent = `${allTips.length} tips`;
+        }
+
+        // ============ Utilities ============
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
